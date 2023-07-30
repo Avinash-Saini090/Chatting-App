@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "8.10.0",
+    "firebase": "^8.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.2.0",
@@ -14,9 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.js",
+    "lint": "eslint src/**/*.js",
     "format:lint": "npm run format && npm run lint",
     "clear": "rimraf build"
   },
