@@ -16,6 +16,16 @@ const renderFileMessage = (file) => {
       <ImgBtnModal src={file.url} fileName={file.name} />
     </div>
   }
+
+  if (file.contentType.includes('audio')) {
+    return (
+      <audio controls>
+        <source src={file.url} type="audio/mp3" />
+        Your browser doesnot support the audio element.
+      </audio>
+    )
+  }
+
   return <a href="file.url">Download {file.name}</a>
 }
 
@@ -80,7 +90,7 @@ const MessageItem = ({message, handleAdmin, handleLike, handleDelete }) => {
             isVisible= {canShowIcons} 
             iconName= "close" 
             tooltip="Delete this message" 
-            onClick={()=>handleDelete(message.id)}
+            onClick={()=>handleDelete(message.id, file)}
           />
         )}
 
